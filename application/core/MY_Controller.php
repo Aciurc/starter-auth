@@ -48,12 +48,14 @@ class Application extends CI_Controller {
 		$choices = array();
         $userRole = $this->session->userdata('userRole');
         $userName = $this->session->userdata('userName');
-        //die($userName);
+        //die(ROLE_ADMIN);
 
         $choices[] = array('name' => "Alpha", 'link' => '/alpha');
         if ($userRole != null) {
-            if ($userRole == "admin") {
+            if ($userRole == ROLE_ADMIN || $userRole == ROLE_USER) {
                 $choices[] = array('name' => "Beta", 'link' => '/beta');
+            }
+            if ($userRole == ROLE_ADMIN) {
                 $choices[] = array('name' => "Gamma", 'link' => '/gamma');
             }
             $choices[] = array('name' => "Logout(Logged in as ".$userName.")", 'link' => '/auth/logout');
