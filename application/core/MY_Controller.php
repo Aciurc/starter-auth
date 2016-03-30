@@ -58,7 +58,7 @@ class Application extends CI_Controller {
             if ($userRole == ROLE_ADMIN) {
                 $choices[] = array('name' => "Gamma", 'link' => '/gamma');
             }
-            $choices[] = array('name' => "Logout(Logged in as ".$userName.")", 'link' => '/auth/logout');
+            $choices[] = array('name' => "Logout (Logged in as ".$userName.")", 'link' => '/auth/logout');
         } else {
             $choices[] = array('name' => "Login", 'link' => '/auth');
         }
